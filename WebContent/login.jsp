@@ -4,28 +4,42 @@
 <html>
 <head>
 <title>Login</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/changes.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body style="background-color: #E6F9E6;">
+<title>Login</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<%@ include file="header.jsp"%>
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/login/registrartion.css">
+
+</head>
+</head>
+<body class="img js-fullheight"
+	style="background-image: url(images/bg.jpg);">
+
+	<%-- <%@ include file="header.jsp"%> --%>
 
 	<%
-	String message = request.getParameter("message");
+		String message = request.getParameter("message");
 	%>
 	<div class="container">
-		<div class="row"
-			style="margin-top: 5px; margin-left: 2px; margin-right: 2px;">
-			<form action="./LoginSrv" method="post"
-				class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2"
-				style="border: 2px solid black; border-radius: 10px; background-color: #FFE5CC; padding: 10px;">
-				<div style="font-weight: bold;" class="text-center">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center mb-5">
+				<h2 class="heading-section">Login</h2>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-md-6 col-lg-4">
+				<div class="login-wrap p-0">
+					<h3 class="mb-4 text-center">Have an account?</h3>
+					<form action="./LoginSrv" method="post" class="signin-form">
+						<%-- <div style="font-weight: bold;" class="text-center">
 					<h2 style="color: green;">Login Form</h2>
 					<%
 					if (message != null) {
@@ -36,42 +50,65 @@
 					<%
 					}
 					%>
-				</div>
-				<div></div>
-				<div class="row">
-					<div class="col-md-12 form-group">
-						<label for="last_name">Username</label> <input type="email"
-							placeholder="Enter Username" name="username" class="form-control"
-							id="last_name" required>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 form-group">
-						<label for="last_name">Password</label> <input type="password"
-							placeholder="Enter Password" name="password" class="form-control"
-							id="last_name" required>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 form-group">
-						<label for="userrole">Login As</label> <select name="usertype"
-							id="userrole" class="form-control" required>
-							<option value="customer" selected>CUSTOMER</option>
-							<option value="admin">ADMIN</option>
-						</select>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<button type="submit" class="btn btn-success">Login</button>
-					</div>
-				</div>
-			</form>
+				</div> --%>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Username"
+								id="last_name" name="username" required>
+						</div>
+						<div class="form-group">
+							<input id="password-field" type="password" class="form-control"
+								placeholder="Password" name="password" required> <span
+								toggle="#password-field"
+								class="fa fa-fw fa-eye field-icon toggle-password"
+								id="last_name"></span>
+						</div>
+						<div class="form-group">
+							<button type="submit"
+								class="form-control btn btn-primary submit px-3">Sign
+								In</button>
+						</div>
+						<div class="form-group d-md-flex">
+							<div class="w-50">
+								<label class="checkbox-wrap checkbox-primary">Remember
+									Me <input type="checkbox" checked> <span
+									class="checkmark"></span>
+								</label>
+							</div>
+							<div class="w-50 text-md-right">
+								<a href="#" style="color: #fff">Forgot Password</a>
+							</div>
+						</div>
 
+						<div class="col-md-12 form-group">
+							<label for="userrole">Login As</label> <select name="usertype"
+								id="userrole" class="form-control" required>
+								<option value="customer" selected>CUSTOMER</option>
+								<option value="admin">ADMIN</option>
+							</select>
+						</div>
+						<p class="w-100 text-center mt-3">
+							Don't have an account? <a href="register.jsp" style="color: #fff">Register
+								Here</a>
+						</p>
+					</form>
+					<p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+					<div class="social d-flex text-center">
+						<a href="#" class="px-2 py-2 mr-md-1 rounded"><span
+							class="ion-logo-google mr-2"><img
+								src="./images/google.png" alt=""></span> Google</a> <a href="#"
+							class="px-2 py-2 ml-md-1 rounded"><span
+							class="ion-logo-facebook mr-2"><img
+								src="./images/facebook.png" alt=""></span> FaceBook</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
+	</section>
 
-	<%@ include file="footer.html"%>
-
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
 </body>
 </html>
