@@ -39,18 +39,16 @@
 				<div class="login-wrap p-0">
 					<h3 class="mb-4 text-center">Have an account?</h3>
 					<form action="./LoginSrv" method="post" class="signin-form">
-						<%-- <div style="font-weight: bold;" class="text-center">
-					<h2 style="color: green;">Login Form</h2>
+						
 					<%
 					if (message != null) {
 					%>
-					<p style="color: blue;">
+					<p style="color: red;">
 						<%=message%>
 					</p>
 					<%
 					}
 					%>
-				</div> --%>
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Username"
 								id="last_name" name="username" required>
